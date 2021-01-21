@@ -10,7 +10,7 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
-        Text("The Beginning")
+        Text("The New Beginning")
     }
 }
 
