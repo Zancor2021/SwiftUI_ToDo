@@ -19,17 +19,15 @@ struct Option:Codable {
 struct ToDo:Identifiable,Codable {
     let id = UUID()
     var description:String      =  "Treffen mit Sonne"
-    var category:String         =  "office"
+    var category:Int            =  1
     var lat:String              =  "53.12345"
     var lon:String              =  "13.5678"
     var date:String             =  "20.01.2021 13:45:13"
 }
 
-
-
 class DataController:ObservableObject{
         
-     
+    @Published var categories = ["private", "office", "party"]
     @Published var todoData: [ToDo] = []
     @Published var optionData: Option = Option()
     
@@ -37,15 +35,20 @@ class DataController:ObservableObject{
         // let defaults = UserDefaults.standard
         //defaults.removeObject(forKey: "SavedOptions")
         loadOption()
+        setTestToDoData()
     }
     
     
     func setTestToDoData(){
-        todoData.append(ToDo(description: "Treffe Marie", category: "private", lat: "53.123455", lon: "13.212", date: "24.01.2021 22:45:00"))
-        todoData.append(ToDo(description: "Meeting Welt Marketing", category: "office", lat: "53.123455", lon: "13.212", date: "30.01.2021 10:30:00"))
-        todoData.append(ToDo(description: "Einkaufen mit Sonne", category: "private", lat: "53.123455", lon: "13.212", date: "23.01.2021 12:00:00"))
+        todoData.append(ToDo(description: "Treffe Marie", category: 0, lat: "53.123455", lon: "13.212", date: "24.01.2021 22:45:00"))
+        todoData.append(ToDo(description: "Meeting Welt Marketing", category: 1, lat: "53.123455", lon: "13.212", date: "30.01.2021 10:30:00"))
+        todoData.append(ToDo(description: "Einkaufen mit Sonne", category: 1, lat: "53.123455", lon: "13.212", date: "23.01.2021 12:00:00"))
     }
     
+    
+    func addTodo(todo:ToDo){
+        todoData.append(todo)
+    }
     
     func getPath()->String{
            // 1
@@ -59,7 +62,8 @@ class DataController:ObservableObject{
     }
     
     func loadToDoToFromFile(){
-        setTestToDoData()
+        
+        
     }
     
     func saveOption(){

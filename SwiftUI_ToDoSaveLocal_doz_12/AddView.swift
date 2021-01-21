@@ -8,45 +8,47 @@
 import SwiftUI
 
 struct AddView: View {
-   @State var username: String = ""
-      @State var isPrivate: Bool = true
-      @State var notificationsEnabled: Bool = false
-      @State private var previewIndex = 0
-      var previewOptions = ["Always", "When Unlocked", "Never"]
+   
+    @ObservedObject var dm:DataController = DataController()
+    @State var todo:ToDo = ToDo()
+    
   var body: some View {
-    NavigationView {
+    
         Form {
-            Section(header: Text("PROFILE")) {
-                TextField("Username", text: $username)
-                Toggle(isOn: $isPrivate) {
-                    Text("Private Account")
-                }
-            }
-            
-            Section(header: Text("NOTIFICATIONS")) {
-                Toggle(isOn: $notificationsEnabled) {
-                    Text("Enabled")
-                }
+            Section(header: Text("Description")) {
+                TextField("Username", text: $todo.description)
                
             }
             
-            Section(header: Text("ABOUT")) {
-                HStack {
-                    Text("Version")
-                    Spacer()
-                    Text("2.2.1")
-                }
+            Section(header: Text("Date")) {
+               TextField("Username", text: $todo.date)
             }
+            
+            Section(header: Text("Position")) {
+               TextField("Latitude", text: $todo.lat)
+                TextField("Longitude", text: $todo.lon)
+            }
+            
+            Section(header: Text("Category")) {
+              Picker(selection: $todo.category, label: Text("Categorie")) {
+                               ForEach(0 ..< dm.categories.count) {
+                                   Text(self.dm.categories[$0])
+                              }
+                           }
+                Text(dm.categories[todo.category])
+            }
+            
             
             Section {
                 Button(action: {
-                    print("Perform an action here...")
+                    self.dm.addTodo(todo: self.todo)
                 }) {
-                    Text("Reset All Settings")
-                }
+                    Text("add new Todo")
+                      
+                }.frame(width:350,height:50,alignment: .center)
             }
         }
-    }
+    
     }
 }
 

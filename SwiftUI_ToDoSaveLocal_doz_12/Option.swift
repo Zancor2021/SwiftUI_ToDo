@@ -25,11 +25,7 @@ extension Binding {
 struct OptionView: View {
     @ObservedObject var dm:DataController = DataController()
     
-    
-   var categories = ["private", "office", "party"]
-      
-
-      var body: some View {
+     var body: some View {
       NavigationView {
         Form {
           Section(header: Text("Choose Category")) {
@@ -37,8 +33,8 @@ struct OptionView: View {
                 self.dm.optionData.category = state
                 self.dm.saveOption()
             }), label: Text("Categorie")) {
-               ForEach(0 ..< categories.count) {
-                  Text(self.categories[$0])
+                ForEach(0 ..< dm.categories.count) {
+                    Text(self.dm.categories[$0])
                }
             }
             
