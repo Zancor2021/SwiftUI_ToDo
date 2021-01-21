@@ -8,21 +8,54 @@
 
 import SwiftUI
 
+extension Binding {
+    func didSet(execute: @escaping (Value) -> Void) -> Binding {
+        return Binding(
+            get: {
+                return self.wrappedValue
+            },
+            set: {
+                self.wrappedValue = $0
+                execute($0)
+            }
+        )
+    }
+}
+
 struct OptionView: View {
+    @ObservedObject var dm:DataController = DataController()
+    
+    
    var categories = ["private", "office", "party"]
-      @State private var selectedCat = 1
+      
 
       var body: some View {
       NavigationView {
         Form {
           Section(header: Text("Choose Category")) {
-            Picker(selection: $selectedCat, label: Text("Categorie")) {
+            Picker(selection: $dm.optionData.category.didSet(execute: { (state) in
+                self.dm.optionData.category = state
+                self.dm.saveOption()
+            }), label: Text("Categorie")) {
                ForEach(0 ..< categories.count) {
                   Text(self.categories[$0])
                }
             }
-            Text("You selected: \(categories[selectedCat])")
+            
          }
+            
+           Section(header: Text("NOTIFICATIONS")) {
+            Toggle("LOL",isOn: $dm.optionData.isOn.didSet(execute: { (state) in
+               self.dm.optionData.isOn = state
+               self.dm.saveOption()
+            }))
+              
+           }
+            
+            
+            
+        }.onAppear(){
+            self.dm.loadOption()
         }
         }
 }

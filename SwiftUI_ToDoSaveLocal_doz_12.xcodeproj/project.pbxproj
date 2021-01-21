@@ -18,6 +18,7 @@
 		D6B6E71D25B977E2006C4DC9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6E71C25B977E2006C4DC9 /* ListView.swift */; };
 		D6B6E71F25B97845006C4DC9 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6E71E25B97845006C4DC9 /* Option.swift */; };
 		D6B6E72125B979DF006C4DC9 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6E72025B979DF006C4DC9 /* AddView.swift */; };
+		D6B6E72325B99672006C4DC9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6E72225B99672006C4DC9 /* DataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D6B6E71C25B977E2006C4DC9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		D6B6E71E25B97845006C4DC9 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		D6B6E72025B979DF006C4DC9 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		D6B6E72225B99672006C4DC9 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				D6B6E71C25B977E2006C4DC9 /* ListView.swift */,
 				D6B6E71E25B97845006C4DC9 /* Option.swift */,
 				D6B6E72025B979DF006C4DC9 /* AddView.swift */,
+				D6B6E72225B99672006C4DC9 /* DataController.swift */,
 				D6B6E70C25B96D55006C4DC9 /* Assets.xcassets */,
 				D6B6E71125B96D55006C4DC9 /* LaunchScreen.storyboard */,
 				D6B6E71425B96D55006C4DC9 /* Info.plist */,
@@ -165,6 +168,7 @@
 				D6B6E71B25B96ECA006C4DC9 /* ContentView.swift in Sources */,
 				D6B6E71F25B97845006C4DC9 /* Option.swift in Sources */,
 				D6B6E71D25B977E2006C4DC9 /* ListView.swift in Sources */,
+				D6B6E72325B99672006C4DC9 /* DataController.swift in Sources */,
 				D6B6E72125B979DF006C4DC9 /* AddView.swift in Sources */,
 				D6B6E70625B96D53006C4DC9 /* SceneDelegate.swift in Sources */,
 				D6B6E70B25B96D53006C4DC9 /* StartView.swift in Sources */,

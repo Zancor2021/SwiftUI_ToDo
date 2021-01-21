@@ -14,7 +14,7 @@ struct StartView: View {
         
         VStack{
             if(isStart){
-                ListView()
+                OptionView()
             }else{
                 Text("The New Beginning").onTapGesture {
                     self.isStart = true
