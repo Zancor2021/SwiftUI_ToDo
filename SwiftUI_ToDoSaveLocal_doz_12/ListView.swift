@@ -16,7 +16,7 @@ struct ListView: View {
             NavigationView{
                List(dm.todoData) { item in
                   // NavigationLink(destination:DetailView(imgPath: item.imgpath, txt: item.title)){
-                ListRowView(description: item.description, category: self.dm.categories[item.category], date: item.date)
+                ListRowView(description: item.description, category: item.category, date: item.date)
                  //  }
                    
                }.onAppear(){
@@ -35,7 +35,7 @@ struct ListView: View {
 struct ListRowView:View{
     
     var description:String = "default"
-    var category:String = "default"
+    var category:Int = 0
     var date:String = "default"
     
     @State private var animationAmount: CGFloat = 0
@@ -51,7 +51,7 @@ struct ListRowView:View{
                 Text(date)
                     .font(.footnote)
                     .frame(width: 230, height: 16, alignment: .leading)
-                Text(category)
+                Text("\(category)")
                 .font(.footnote)
                 .frame(width: 230, height: 18, alignment: .leading)
             }

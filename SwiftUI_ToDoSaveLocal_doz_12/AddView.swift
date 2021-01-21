@@ -35,7 +35,7 @@ struct AddView: View {
                                    Text(self.dm.categories[$0])
                               }
                            }
-                Text(dm.categories[todo.category])
+                
             }
             
             

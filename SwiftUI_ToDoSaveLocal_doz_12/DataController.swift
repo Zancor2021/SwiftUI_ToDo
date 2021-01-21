@@ -35,34 +35,53 @@ class DataController:ObservableObject{
         // let defaults = UserDefaults.standard
         //defaults.removeObject(forKey: "SavedOptions")
         loadOption()
-        setTestToDoData()
+       /*setTestToDoData()*/
     }
     
     
     func setTestToDoData(){
-        todoData.append(ToDo(description: "Treffe Marie", category: 0, lat: "53.123455", lon: "13.212", date: "24.01.2021 22:45:00"))
+      /*todoData.append(ToDo(description: "Treffe Marie", category: 0, lat: "53.123455", lon: "13.212", date: "24.01.2021 22:45:00"))
         todoData.append(ToDo(description: "Meeting Welt Marketing", category: 1, lat: "53.123455", lon: "13.212", date: "30.01.2021 10:30:00"))
-        todoData.append(ToDo(description: "Einkaufen mit Sonne", category: 1, lat: "53.123455", lon: "13.212", date: "23.01.2021 12:00:00"))
+        todoData.append(ToDo(description: "Einkaufen mit Sonne", category: 1, lat: "53.123455", lon: "13.212", date: "23.01.2021 12:00:00"))*/
     }
     
     
     func addTodo(todo:ToDo){
+     
+        loadToDoToFromFile()
         todoData.append(todo)
+        saveToDoToFile()
     }
     
     func getPath()->String{
            // 1
            let rootPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, .userDomainMask, true)[0]
            print(rootPath)
-           return rootPath.appendingFormat("/tododata.plist")
+           return rootPath.appendingFormat("/todos1.plist")
        }
     
     func saveToDoToFile(){
-      
+      let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("todos1.plist")
+        print(path)
+        let encoder = PropertyListEncoder()
+            encoder.outputFormat = .xml
+        do{
+            let data = try encoder.encode(todoData)
+            try data.write(to: path)
+        }catch {
+             print(error)
+        }
     }
     
     func loadToDoToFromFile(){
+          let path = getPath()
         
+        if  let xml         = FileManager.default.contents(atPath: path),
+            let todos = try? PropertyListDecoder().decode([ToDo].self, from: xml)
+        {
+            print(todos[0].description)
+            todoData = todos
+        }
         
     }
     

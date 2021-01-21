@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>description</key>
+		<string>Mom treffen</string>
+		<key>category</key>
+		<integer>0</integer>
+		<key>lat</key>
+		<string>13.768577</string>
+		<key>lon</key>
+		<string>52.1212</string>
+		<key>date</key>
+		<string>21.01.2021 13:45:14</string>
+	</dict>
+</array>
+</plist>
