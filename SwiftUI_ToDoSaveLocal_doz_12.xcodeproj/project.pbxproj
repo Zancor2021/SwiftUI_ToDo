@@ -15,6 +15,9 @@
 		D6B6E71025B96D55006C4DC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6B6E70F25B96D55006C4DC9 /* Preview Assets.xcassets */; };
 		D6B6E71325B96D55006C4DC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6B6E71125B96D55006C4DC9 /* LaunchScreen.storyboard */; };
 		D6B6E71B25B96ECA006C4DC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6E71A25B96EC9006C4DC9 /* ContentView.swift */; };
+		D6B6E71D25B977E2006C4DC9 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6E71C25B977E2006C4DC9 /* ListView.swift */; };
+		D6B6E71F25B97845006C4DC9 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6E71E25B97845006C4DC9 /* Option.swift */; };
+		D6B6E72125B979DF006C4DC9 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6E72025B979DF006C4DC9 /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		D6B6E71225B96D55006C4DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6B6E71425B96D55006C4DC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6B6E71A25B96EC9006C4DC9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D6B6E71C25B977E2006C4DC9 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		D6B6E71E25B97845006C4DC9 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
+		D6B6E72025B979DF006C4DC9 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,9 @@
 				D6B6E70525B96D53006C4DC9 /* SceneDelegate.swift */,
 				D6B6E71A25B96EC9006C4DC9 /* ContentView.swift */,
 				D6B6E70A25B96D53006C4DC9 /* StartView.swift */,
+				D6B6E71C25B977E2006C4DC9 /* ListView.swift */,
+				D6B6E71E25B97845006C4DC9 /* Option.swift */,
+				D6B6E72025B979DF006C4DC9 /* AddView.swift */,
 				D6B6E70C25B96D55006C4DC9 /* Assets.xcassets */,
 				D6B6E71125B96D55006C4DC9 /* LaunchScreen.storyboard */,
 				D6B6E71425B96D55006C4DC9 /* Info.plist */,
@@ -154,6 +163,9 @@
 			files = (
 				D6B6E70425B96D53006C4DC9 /* AppDelegate.swift in Sources */,
 				D6B6E71B25B96ECA006C4DC9 /* ContentView.swift in Sources */,
+				D6B6E71F25B97845006C4DC9 /* Option.swift in Sources */,
+				D6B6E71D25B977E2006C4DC9 /* ListView.swift in Sources */,
+				D6B6E72125B979DF006C4DC9 /* AddView.swift in Sources */,
 				D6B6E70625B96D53006C4DC9 /* SceneDelegate.swift in Sources */,
 				D6B6E70B25B96D53006C4DC9 /* StartView.swift in Sources */,
 				D6B6E70925B96D53006C4DC9 /* SwiftUI_ToDoSaveLocal_doz_12.xcdatamodeld in Sources */,

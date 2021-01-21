@@ -9,10 +9,26 @@
 import SwiftUI
 
 struct StartView: View {
+    @State var isStart = false
     var body: some View {
-        Text("The New Beginning")
+        
+        VStack{
+            if(isStart){
+                ListView()
+            }else{
+                Text("The New Beginning").onTapGesture {
+                    self.isStart = true
+                }
+            }
+        }
+        
+        
+        
+       
+            
+        }
     }
-}
+
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {
