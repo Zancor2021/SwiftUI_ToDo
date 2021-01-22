@@ -17,10 +17,11 @@ struct ListView: View {
            var body: some View {
             NavigationView{
                 VStack{
-                    Text("search").onTapGesture {
-                        self.dm.filterData()
-                    }
-                    SearchBar(text: $dm.searchTxt).padding(3)
+                  
+                    SearchBar(text: $dm.searchTxt.didSet(execute: { (state) in
+                      self.dm.filterData()
+                    })).padding(3)
+                      
                   
                     List(dm.todoData) { item in
                       
