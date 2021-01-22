@@ -17,7 +17,9 @@ struct ListView: View {
            var body: some View {
             NavigationView{
                 VStack{
-                    Text(dm.searchTxt)
+                    Text("search").onTapGesture {
+                        self.dm.filterData()
+                    }
                     SearchBar(text: $dm.searchTxt).padding(3)
                   
                     List(dm.todoData) { item in
