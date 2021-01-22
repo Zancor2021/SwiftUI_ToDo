@@ -30,6 +30,7 @@ class DataController:ObservableObject{
     @Published var categories = ["private", "office", "party"]
     @Published var optionData: Option = Option()
     
+    @Published var searchTxt: String = "Tr"
     
     @Published var todoData: [ToDo] = []
                var todoDataLoad: [ToDo] = []
@@ -109,15 +110,26 @@ class DataController:ObservableObject{
     
     func filterData(){
         loadOption()
-        print("filter")
+        print("filter:\(searchTxt)")
         todoData = []
+        
         if(optionData.isOn){
             print("all")
-            todoData = todoDataLoad
+            if(searchTxt.count >= 1){
+            for item in todoDataLoad{
+                  if(item.description.contains(searchTxt)){
+                   todoData.append(item)
+                }
+                }
+            }else{
+                todoData = todoDataLoad
+            }
         }else{
             for item in todoDataLoad{
                 if(item.category == optionData.category){
-                    todoData.append(item)
+                    if(item.description.contains(searchTxt)){
+                        todoData.append(item)
+                    }
                 }
             }
         }

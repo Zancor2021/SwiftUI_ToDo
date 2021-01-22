@@ -11,24 +11,30 @@ import SwiftUI
 struct ListView: View {
    
         @ObservedObject var dm:DataController = DataController()
-           
+        
+    
+    
            var body: some View {
             NavigationView{
-               List(dm.todoData) { item in
-                  // NavigationLink(destination:DetailView(imgPath: item.imgpath, txt: item.title)){
-                ListRowView(description: item.description, category: self.dm.categories[item.category], date: item.date)
-                 //  }
-                   
-               }.onAppear(){
-                self.dm.loadToDoToFromFile()
-               }.navigationBarTitle("TODO'S",displayMode: .inline).navigationBarItems(leading:NavigationLink(destination: OptionView()){
-                Image(systemName: "heart")
-                }, trailing:
-                NavigationLink(destination: AddView()){
+                VStack{
+                    Text(dm.searchTxt)
+                    SearchBar(text: $dm.searchTxt).padding(3)
+                  
+                    List(dm.todoData) { item in
+                      
+                    ListRowView(description: item.description, category: self.dm.categories[item.category], date: item.date)
+                    
+                       
+                   }.onAppear(){
+                    self.dm.loadToDoToFromFile()
+                   }.navigationBarTitle("TODO'S",displayMode: .inline).navigationBarItems(leading:NavigationLink(destination: OptionView()){
                     Image(systemName: "heart")
+                    }, trailing:
+                    NavigationLink(destination: AddView()){
+                        Image(systemName: "heart")
+                    }
+                    )
                 }
-                )
-                
             }
        }
     

@@ -20,6 +20,8 @@
 		D6B6E72125B979DF006C4DC9 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6E72025B979DF006C4DC9 /* AddView.swift */; };
 		D6B6E72325B99672006C4DC9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6E72225B99672006C4DC9 /* DataController.swift */; };
 		D6B6E72525B9CBB1006C4DC9 /* todos.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6B6E72425B9CBB1006C4DC9 /* todos.plist */; };
+		D6EBFA4925BAE37600ABF0CA /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EBFA4825BAE37600ABF0CA /* SearchBar.swift */; };
+		D6EBFA4B25BAE5B600ABF0CA /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EBFA4A25BAE5B600ABF0CA /* extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		D6B6E72025B979DF006C4DC9 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		D6B6E72225B99672006C4DC9 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		D6B6E72425B9CBB1006C4DC9 /* todos.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = todos.plist; sourceTree = "<group>"; };
+		D6EBFA4825BAE37600ABF0CA /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		D6EBFA4A25BAE5B600ABF0CA /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		D680EE0825BABC9500457F01 /* system */ = {
 			isa = PBXGroup;
 			children = (
+				D6EBFA4A25BAE5B600ABF0CA /* extensions.swift */,
 				D6B6E70325B96D53006C4DC9 /* AppDelegate.swift */,
 				D6B6E70525B96D53006C4DC9 /* SceneDelegate.swift */,
 			);
@@ -63,6 +68,7 @@
 		D680EE0925BABCB200457F01 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				D6EBFA4825BAE37600ABF0CA /* SearchBar.swift */,
 				D6B6E71A25B96EC9006C4DC9 /* ContentView.swift */,
 				D6B6E70A25B96D53006C4DC9 /* StartView.swift */,
 				D6B6E71C25B977E2006C4DC9 /* ListView.swift */,
@@ -195,10 +201,12 @@
 				D6B6E70425B96D53006C4DC9 /* AppDelegate.swift in Sources */,
 				D6B6E71B25B96ECA006C4DC9 /* ContentView.swift in Sources */,
 				D6B6E71F25B97845006C4DC9 /* Option.swift in Sources */,
+				D6EBFA4B25BAE5B600ABF0CA /* extensions.swift in Sources */,
 				D6B6E71D25B977E2006C4DC9 /* ListView.swift in Sources */,
 				D6B6E72325B99672006C4DC9 /* DataController.swift in Sources */,
 				D6B6E72125B979DF006C4DC9 /* AddView.swift in Sources */,
 				D6B6E70625B96D53006C4DC9 /* SceneDelegate.swift in Sources */,
+				D6EBFA4925BAE37600ABF0CA /* SearchBar.swift in Sources */,
 				D6B6E70B25B96D53006C4DC9 /* StartView.swift in Sources */,
 				D6B6E70925B96D53006C4DC9 /* SwiftUI_ToDoSaveLocal_doz_12.xcdatamodeld in Sources */,
 			);
