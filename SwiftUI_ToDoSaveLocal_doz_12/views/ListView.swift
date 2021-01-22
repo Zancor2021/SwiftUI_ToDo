@@ -16,14 +16,16 @@ struct ListView: View {
             NavigationView{
                List(dm.todoData) { item in
                   // NavigationLink(destination:DetailView(imgPath: item.imgpath, txt: item.title)){
-                ListRowView(description: item.description, category: item.category, date: item.date)
+                ListRowView(description: item.description, category: self.dm.categories[item.category], date: item.date)
                  //  }
                    
                }.onAppear(){
                 self.dm.loadToDoToFromFile()
-               }.navigationBarTitle("TODO'S",displayMode: .inline).navigationBarItems(trailing:
+               }.navigationBarTitle("TODO'S",displayMode: .inline).navigationBarItems(leading:NavigationLink(destination: OptionView()){
+                Image(systemName: "heart")
+                }, trailing:
                 NavigationLink(destination: AddView()){
-                 Image(systemName: "heart")
+                    Image(systemName: "heart")
                 }
                 )
                 
@@ -35,7 +37,7 @@ struct ListView: View {
 struct ListRowView:View{
     
     var description:String = "default"
-    var category:Int = 0
+    var category:String = "0"
     var date:String = "default"
     
     @State private var animationAmount: CGFloat = 0

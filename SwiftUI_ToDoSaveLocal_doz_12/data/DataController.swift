@@ -57,12 +57,19 @@ class DataController:ObservableObject{
            // 1
            let rootPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, .userDomainMask, true)[0]
            print(rootPath)
-           return rootPath.appendingFormat("/todos1.plist")
+           return rootPath.appendingFormat("/todos8.plist")
        }
     
-    func saveToDoToFile(){
-      let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("todos1.plist")
+    func getPath2()->URL{
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("todos8.plist")
         print(path)
+       return path
+    }
+    
+        
+    func saveToDoToFile(){
+      let path = getPath2()
+        
         let encoder = PropertyListEncoder()
             encoder.outputFormat = .xml
         do{
@@ -81,13 +88,24 @@ class DataController:ObservableObject{
         {
             print(todos[0].description)
             todoData = todos
+        }else{
+            print("no")
+            let defaultplist = Bundle.main.path(forResource: "todos", ofType: "plist")
+            if  let xml         = FileManager.default.contents(atPath: defaultplist!),
+                let todos = try? PropertyListDecoder().decode([ToDo].self, from: xml)
+            {
+                print(todos[0].description)
+                todoData = todos
+            }
         }
         
     }
     
     func saveOption(){
+       // let path = getPath2()
       let encoder = JSONEncoder()
       if let encoded = try? encoder.encode(optionData) {
+          //try! encoded.write(to: path)
           let defaults = UserDefaults.standard
           defaults.set(encoded, forKey: "SavedOptions")
       }    }

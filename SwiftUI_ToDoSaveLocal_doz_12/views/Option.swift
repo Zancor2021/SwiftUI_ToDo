@@ -37,16 +37,15 @@ struct OptionView: View {
                     Text(self.dm.categories[$0])
                }
             }
-            
-         }
-            
-           Section(header: Text("NOTIFICATIONS")) {
-            Toggle("LOL",isOn: $dm.optionData.isOn.didSet(execute: { (state) in
+            Toggle("show all categories",isOn: $dm.optionData.isOn.didSet(execute: { (state) in
                self.dm.optionData.isOn = state
                self.dm.saveOption()
             }))
-              
-           }
+            
+            
+            }
+            
+        
             
             
             

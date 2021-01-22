@@ -51,6 +51,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D680EE0825BABC9500457F01 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				D6B6E70325B96D53006C4DC9 /* AppDelegate.swift */,
+				D6B6E70525B96D53006C4DC9 /* SceneDelegate.swift */,
+			);
+			path = system;
+			sourceTree = "<group>";
+		};
+		D680EE0925BABCB200457F01 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D6B6E71A25B96EC9006C4DC9 /* ContentView.swift */,
+				D6B6E70A25B96D53006C4DC9 /* StartView.swift */,
+				D6B6E71C25B977E2006C4DC9 /* ListView.swift */,
+				D6B6E71E25B97845006C4DC9 /* Option.swift */,
+				D6B6E72025B979DF006C4DC9 /* AddView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		D680EE0A25BABCC800457F01 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				D6B6E72425B9CBB1006C4DC9 /* todos.plist */,
+				D6B6E72225B99672006C4DC9 /* DataController.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
 		D6B6E6F725B96D53006C4DC9 = {
 			isa = PBXGroup;
 			children = (
@@ -70,15 +100,9 @@
 		D6B6E70225B96D53006C4DC9 /* SwiftUI_ToDoSaveLocal_doz_12 */ = {
 			isa = PBXGroup;
 			children = (
-				D6B6E72425B9CBB1006C4DC9 /* todos.plist */,
-				D6B6E70325B96D53006C4DC9 /* AppDelegate.swift */,
-				D6B6E70525B96D53006C4DC9 /* SceneDelegate.swift */,
-				D6B6E71A25B96EC9006C4DC9 /* ContentView.swift */,
-				D6B6E70A25B96D53006C4DC9 /* StartView.swift */,
-				D6B6E71C25B977E2006C4DC9 /* ListView.swift */,
-				D6B6E71E25B97845006C4DC9 /* Option.swift */,
-				D6B6E72025B979DF006C4DC9 /* AddView.swift */,
-				D6B6E72225B99672006C4DC9 /* DataController.swift */,
+				D680EE0825BABC9500457F01 /* system */,
+				D680EE0925BABCB200457F01 /* views */,
+				D680EE0A25BABCC800457F01 /* data */,
 				D6B6E70C25B96D55006C4DC9 /* Assets.xcassets */,
 				D6B6E71125B96D55006C4DC9 /* LaunchScreen.storyboard */,
 				D6B6E71425B96D55006C4DC9 /* Info.plist */,
