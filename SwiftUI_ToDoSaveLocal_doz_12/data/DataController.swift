@@ -117,7 +117,7 @@ class DataController:ObservableObject{
             print("all")
             if(searchTxt.count >= 1){
             for item in todoDataLoad{
-                  if(item.description.contains(searchTxt)){
+                if(item.description.lowercased().contains(searchTxt.lowercased())){
                    todoData.append(item)
                 }
                 }
@@ -125,13 +125,23 @@ class DataController:ObservableObject{
                 todoData = todoDataLoad
             }
         }else{
-            for item in todoDataLoad{
-                if(item.category == optionData.category){
-                    if(item.description.contains(searchTxt)){
-                        todoData.append(item)
+            print("filter category")
+            if(searchTxt.count >= 1){
+                        for item in todoDataLoad{
+                            if(item.category == optionData.category){
+                                if(item.description.lowercased().contains(searchTxt.lowercased())){
+                                    todoData.append(item)
+                                }
+                            }
+                        }
+                }else{
+                  for item in todoDataLoad{
+                        if(item.category == optionData.category){
+                               todoData.append(item)
+                            }
+                 
                     }
                 }
-            }
         }
     }
     
