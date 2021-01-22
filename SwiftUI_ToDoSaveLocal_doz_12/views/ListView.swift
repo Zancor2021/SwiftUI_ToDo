@@ -23,21 +23,24 @@ struct ListView: View {
                     })).padding(3)
                       
                   
-                    List(dm.todoData) { item in
-                      
-                    ListRowView(description: item.description, category: self.dm.categories[item.category], date: item.date)
+                    List{
+                        ForEach(dm.todoData) { (item) in
+                        ListRowView(description: item.description, category: self.dm.categories[item.category], date: item.date)
                     
-                       
-                   }.onAppear(){
-                    self.dm.loadToDoToFromFile()
-                   }.navigationBarTitle("TODO'S",displayMode: .inline).navigationBarItems(leading:NavigationLink(destination: OptionView()){
-                    Image(systemName: "heart")
-                    }, trailing:
-                    NavigationLink(destination: AddView()){
-                        Image(systemName: "heart")
+                        }.onDelete { (indexSet) in
+                            self.dm.todoData.remove(atOffsets: indexSet)
+                            self.dm.saveToDoToFile()
+                        }
                     }
-                    )
-                }
+                }.onAppear(){
+                 self.dm.loadToDoToFromFile()
+                }.navigationBarTitle("TODO'S",displayMode: .inline).navigationBarItems(leading:NavigationLink(destination: OptionView()){
+                 Image(systemName: "heart")
+                 }, trailing:
+                 NavigationLink(destination: AddView()){
+                     Image(systemName: "heart")
+                 }
+                 )
             }
        }
     
