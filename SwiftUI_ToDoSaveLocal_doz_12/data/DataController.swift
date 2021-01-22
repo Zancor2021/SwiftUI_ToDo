@@ -28,8 +28,12 @@ struct ToDo:Identifiable,Codable {
 class DataController:ObservableObject{
         
     @Published var categories = ["private", "office", "party"]
-    @Published var todoData: [ToDo] = []
     @Published var optionData: Option = Option()
+    
+    
+    @Published var todoData: [ToDo] = []
+               var todoDataLoad: [ToDo] = []
+    
     
     init() {
         // let defaults = UserDefaults.standard
@@ -87,7 +91,7 @@ class DataController:ObservableObject{
             let todos = try? PropertyListDecoder().decode([ToDo].self, from: xml)
         {
             print(todos[0].description)
-            todoData = todos
+            todoDataLoad = todos
         }else{
             print("no")
             let defaultplist = Bundle.main.path(forResource: "todos", ofType: "plist")
@@ -95,10 +99,28 @@ class DataController:ObservableObject{
                 let todos = try? PropertyListDecoder().decode([ToDo].self, from: xml)
             {
                 print(todos[0].description)
-                todoData = todos
+                todoDataLoad = todos
             }
         }
         
+        filterData()
+        
+    }
+    
+    func filterData(){
+        loadOption()
+        print("filter")
+        todoData = []
+        if(optionData.isOn){
+            print("all")
+            todoData = todoDataLoad
+        }else{
+            for item in todoDataLoad{
+                if(item.category == optionData.category){
+                    todoData.append(item)
+                }
+            }
+        }
     }
     
     func saveOption(){

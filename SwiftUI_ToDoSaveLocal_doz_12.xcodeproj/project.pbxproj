@@ -341,6 +341,7 @@
 				DEVELOPMENT_TEAM = 8TXM23JGPB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_ToDoSaveLocal_doz_12/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,6 +362,7 @@
 				DEVELOPMENT_TEAM = 8TXM23JGPB;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUI_ToDoSaveLocal_doz_12/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

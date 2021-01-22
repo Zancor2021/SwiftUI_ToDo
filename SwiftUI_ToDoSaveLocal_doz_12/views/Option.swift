@@ -36,7 +36,7 @@ struct OptionView: View {
                 ForEach(0 ..< dm.categories.count) {
                     Text(self.dm.categories[$0])
                }
-            }
+            }.disabled(self.dm.optionData.isOn)
             Toggle("show all categories",isOn: $dm.optionData.isOn.didSet(execute: { (state) in
                self.dm.optionData.isOn = state
                self.dm.saveOption()
